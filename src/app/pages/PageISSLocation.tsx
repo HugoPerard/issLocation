@@ -5,7 +5,7 @@ import GoogleMapReact from 'google-map-react';
 import { RiSpaceShipFill } from 'react-icons/ri';
 import { useQuery, UseQueryOptions } from 'react-query';
 
-import { Page, PageContent } from '@/app/layout';
+import { Page } from '@/app/layout';
 
 export const useISSLocation = (config: UseQueryOptions<any> = {}) => {
   const result = useQuery(

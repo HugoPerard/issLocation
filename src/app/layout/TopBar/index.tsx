@@ -1,37 +1,31 @@
-import React, { useContext } from 'react';
+import React from 'react';
 
 import {
   Box,
   Flex,
   SlideFade,
-  IconButton,
   useTheme,
   useBreakpointValue,
-  Center,
   Heading,
 } from '@chakra-ui/react';
-import { FiMenu } from 'react-icons/fi';
 import { Link as RouterLink } from 'react-router-dom';
-
-import { LayoutContext } from '@/app/layout';
-import { Logo } from '@/components';
 
 import { NavDrawer } from '../NavDrawer';
 
-const MenuButton = (props) => {
-  const { navOnOpen } = useContext(LayoutContext);
-  return (
-    <IconButton
-      aria-label="Navigation"
-      icon={<FiMenu size="1.5em" />}
-      onClick={navOnOpen}
-      bg="transparent"
-      _active={{ bg: 'gray.700' }}
-      _hover={{ bg: 'gray.900' }}
-      {...props}
-    />
-  );
-};
+// const MenuButton = (props) => {
+//   const { navOnOpen } = useContext(LayoutContext);
+//   return (
+//     <IconButton
+//       aria-label="Navigation"
+//       icon={<FiMenu size="1.5em" />}
+//       onClick={navOnOpen}
+//       bg="transparent"
+//       _active={{ bg: 'gray.700' }}
+//       _hover={{ bg: 'gray.900' }}
+//       {...props}
+//     />
+//   );
+// };
 
 export const TopBar = () => {
   const theme = useTheme();
