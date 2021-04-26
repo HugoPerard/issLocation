@@ -23,13 +23,14 @@ export const useISSLocation = (config: UseQueryOptions<any> = {}) => {
 export const PageISSLocation = () => {
   const { data } = useISSLocation({ refetchInterval: 5 });
   const ISSLocation = data?.data?.iss_position;
+
   return (
     <Page>
       {ISSLocation && (
         <div style={{ height: '91vh', width: '100%' }}>
           <GoogleMapReact
             bootstrapURLKeys={{
-              key: process.env.NEXT_PUBLIC_GOOGLE_MAP_API_KEY || null,
+              key: 'AIzaSyDFpEXmYoOgaIEElR0e9rxfuE9pLcSEx0M' || null,
             }}
             center={{
               lat: parseInt(ISSLocation?.latitude),
