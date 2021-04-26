@@ -4,7 +4,7 @@ services:
     build:
       context: ./
     volumes:
-      - .:/src
+      - .:/opt/app
     command: yarn dev
     ports:
       - '3000:3000'
