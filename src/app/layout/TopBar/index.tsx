@@ -7,11 +7,13 @@ import {
   IconButton,
   useTheme,
   useBreakpointValue,
+  Center,
+  Heading,
 } from '@chakra-ui/react';
 import { FiMenu } from 'react-icons/fi';
 import { Link as RouterLink } from 'react-router-dom';
 
-import { AccountMenu, LayoutContext, MainMenu } from '@/app/layout';
+import { LayoutContext } from '@/app/layout';
 import { Logo } from '@/components';
 
 import { NavDrawer } from '../NavDrawer';
@@ -61,8 +63,9 @@ export const TopBar = () => {
           >
             <Logo color="gray.500" h="1rem" />
           </Box>
-          <MainMenu mr="auto" ml="4" display={{ base: 'none', md: 'flex' }} />
-          <AccountMenu />
+          <Center position="absolute" left="46%">
+            <Heading size="md">ISS Location</Heading>
+          </Center>
         </Flex>
       </SlideFade>
       <Box h={theme.layout.topBar.height} />

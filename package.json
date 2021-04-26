@@ -6,8 +6,8 @@
   "scripts": {
     "postinstall": "husky install",
     "test": "jest --roots src --watch",
-    "dev": "yarn docs:build && next dev",
-    "build": "yarn docs:build && next build",
+    "dev": "next dev",
+    "build": "next build",
     "start": "next start",
     "pretty": "prettier -w .",
     "lint": "eslint ./src --fix",
@@ -33,6 +33,7 @@
     "dayjs": "1.10.4",
     "faker": "5.5.0",
     "framer-motion": "4.0.3",
+    "google-map-react": "^2.1.9",
     "history": "5.0.0",
     "i18next": "20.1.0",
     "next": "10.0.9",
