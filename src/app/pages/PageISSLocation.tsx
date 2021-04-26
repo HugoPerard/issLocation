@@ -11,7 +11,8 @@ import { Page } from '@/app/layout';
 export const useISSLocation = (config: UseQueryOptions<any> = {}) => {
   const result = useQuery(
     ['ISSLocation'],
-    (): Promise<any> => axios.get('http://api.open-notify.org/iss-now.json'),
+    (): Promise<any> =>
+      axios.get('https://api.wheretheiss.at/v1/satellites/25544'),
     {
       ...config,
     }
@@ -22,29 +23,31 @@ export const useISSLocation = (config: UseQueryOptions<any> = {}) => {
 
 export const PageISSLocation = () => {
   const { data } = useISSLocation({ refetchInterval: 5 });
-  const ISSLocation = data?.data?.iss_position;
+  const ISSLocationInfo = data?.data;
 
   return (
     <Page>
-      {ISSLocation && (
+      {ISSLocationInfo && (
         <div style={{ height: '91vh', width: '100%' }}>
           <GoogleMapReact
             bootstrapURLKeys={{
               key: 'AIzaSyDFpEXmYoOgaIEElR0e9rxfuE9pLcSEx0M' || null,
             }}
             center={{
-              lat: parseInt(ISSLocation?.latitude),
-              lng: parseInt(ISSLocation?.longitude),
+              lat: ISSLocationInfo?.latitude,
+              lng: ISSLocationInfo?.longitude,
             }}
             defaultZoom={1}
             yesIWantToUseGoogleMapApiInternals
           >
             <Tooltip
-              label={`Latitude : ${ISSLocation?.latitude} - Longitude : ${ISSLocation?.longitude}`}
+              label={`Latitude : ${ISSLocationInfo?.latitude?.toFixed(
+                4
+              )} - Longitude : ${ISSLocationInfo?.longitude?.toFixed(4)}`}
             >
               <Image
-                lat={parseInt(ISSLocation?.latitude)}
-                lng={parseInt(ISSLocation?.longitude)}
+                lat={ISSLocationInfo?.latitude}
+                lng={ISSLocationInfo?.longitude}
                 boxSize="30px"
                 alt="ISS"
                 src="https://icons.iconarchive.com/icons/goodstuff-no-nonsense/free-space/512/international-space-station-icon.png"
