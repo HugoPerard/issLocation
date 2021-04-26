@@ -22,7 +22,7 @@ export const useISSLocation = (config: UseQueryOptions<any> = {}) => {
 };
 
 export const PageISSLocation = () => {
-  const { data } = useISSLocation({ refetchInterval: 5 });
+  const { data } = useISSLocation({ refetchInterval: 2000 });
   const ISSLocationInfo = data?.data;
 
   return (
