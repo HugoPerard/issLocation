@@ -1,6 +1,6 @@
 {
-    "name": "Start UI",
-    "short_name": "Start UI",
+    "name": "ISS Location",
+    "short_name": "ISS Location",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",

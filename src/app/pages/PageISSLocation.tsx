@@ -24,28 +24,26 @@ export const PageISSLocation = () => {
   const ISSLocation = data?.data?.iss_position;
   return (
     <Page>
-      <PageContent>
-        {ISSLocation && (
-          <div style={{ height: '100vh', width: '100%' }}>
-            <GoogleMapReact
-              center={{
-                lat: parseInt(ISSLocation?.latitude),
-                lng: parseInt(ISSLocation?.longitude),
-              }}
-              defaultZoom={1}
-              yesIWantToUseGoogleMapApiInternals
-            >
-              <RiSpaceShipFill
-                // @ts-ignore
-                lat={parseInt(ISSLocation?.latitude)}
-                lng={parseInt(ISSLocation?.longitude)}
-                size="30px"
-                color="white"
-              />
-            </GoogleMapReact>
-          </div>
-        )}
-      </PageContent>
+      {ISSLocation && (
+        <div style={{ height: '100vh', width: '100%' }}>
+          <GoogleMapReact
+            center={{
+              lat: parseInt(ISSLocation?.latitude),
+              lng: parseInt(ISSLocation?.longitude),
+            }}
+            defaultZoom={1}
+            yesIWantToUseGoogleMapApiInternals
+          >
+            <RiSpaceShipFill
+              // @ts-ignore
+              lat={parseInt(ISSLocation?.latitude)}
+              lng={parseInt(ISSLocation?.longitude)}
+              size="30px"
+              color="white"
+            />
+          </GoogleMapReact>
+        </div>
+      )}
     </Page>
   );
 };

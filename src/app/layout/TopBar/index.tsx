@@ -53,19 +53,13 @@ export const TopBar = () => {
           align="center"
           pt="safe-top"
           px="4"
+          alignItems="center"
+          justifyContent="center"
           h={theme.layout.topBar.height}
         >
-          <MenuButton display={{ base: 'flex', md: 'none' }} ml="-0.5rem" />
-          <Box
-            as={RouterLink}
-            to="/"
-            mx={{ base: 'auto', [theme.layout.breakpoints.desktop]: 0 }}
-          >
-            <Logo color="gray.500" h="1rem" />
-          </Box>
-          <Center position="absolute" left="46%">
-            <Heading size="md">ISS Location</Heading>
-          </Center>
+          <Heading as={RouterLink} to="/" size="md">
+            ISS Location
+          </Heading>
         </Flex>
       </SlideFade>
       <Box h={theme.layout.topBar.height} />
