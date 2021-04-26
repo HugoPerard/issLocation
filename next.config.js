@@ -22,4 +22,19 @@ module.exports = {
       },
     ];
   },
+  async headers() {
+    return [
+      {
+        source: '/:path*',
+        headers: [
+          {
+            // // https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
+            key: 'Content-Security-Policy',
+            value:
+              "default-src [iss-location.vercel.app] 'self' data: 'unsafe-inline'",
+          },
+        ],
+      },
+    ];
+  },
 };
