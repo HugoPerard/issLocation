@@ -30,8 +30,7 @@ module.exports = {
           {
             // // https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
             key: 'Content-Security-Policy',
-            value:
-              "default-src [iss-location.vercel.app] 'unsafe-inline' data:; font-src 'unsafe-inline' data:",
+            value: 'upgrade-insecure-requests',
           },
         ],
       },
