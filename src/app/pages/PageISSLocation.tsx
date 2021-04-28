@@ -53,7 +53,7 @@ export const PageISSLocation = () => {
           <HStack bg="gray.700" py={2} px={20} spacing={8}>
             <Stack spacing={0}>
               <Text fontSize="sm" color="gray.200">
-                {date?.format('dddd DD MMMM')}
+                {date?.format('dddd, MMMM D, YYYY')}
                 <Text>{date?.format('HH:mm:ss')}</Text>
               </Text>
             </Stack>
