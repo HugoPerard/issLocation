@@ -82,7 +82,15 @@ export const PageISSLocation = () => {
                   Altitude
                 </Text>
                 <Text fontSize="sm" color="gray.200">
-                  {ISSLocationInfo?.altitude?.toFixed(3)} kms
+                  {ISSLocationInfo?.altitude?.toFixed(0)} kms
+                </Text>
+              </Stack>
+              <Stack spacing={0}>
+                <Text fontWeight="bold" color="gray.100">
+                  Velocity
+                </Text>
+                <Text fontSize="sm" color="gray.200">
+                  {ISSLocationInfo?.velocity?.toFixed(0)} kms/h
                 </Text>
               </Stack>
             </HStack>
@@ -136,14 +144,7 @@ export const PageISSLocation = () => {
                 lng={ISSLocationInfo?.longitude}
                 boxSize="40px"
               >
-                <Tooltip
-                  label={`Latitude : ${ISSLocationInfo?.latitude?.toFixed(
-                    4
-                  )} - Longitude : ${ISSLocationInfo?.longitude?.toFixed(
-                    4
-                  )} - Date : ${date.format('DD/MM/YYYY-HH:mm:ss')}`}
-                >
-                  {/* <Circle
+                {/* <Circle
                   size="100px"
                   bg="white"
                   opacity="0.3"
@@ -153,16 +154,15 @@ export const PageISSLocation = () => {
                   border="solid 1px gray"
                 /> */}
 
-                  <Image
-                    opacity="1"
-                    boxSize="40px"
-                    alt="ISS"
-                    src="https://icons.iconarchive.com/icons/goodstuff-no-nonsense/free-space/512/international-space-station-icon.png"
-                    position="absolute"
-                    right="19"
-                    bottom="19"
-                  />
-                </Tooltip>
+                <Image
+                  opacity="1"
+                  boxSize="40px"
+                  alt="ISS"
+                  src="https://icons.iconarchive.com/icons/goodstuff-no-nonsense/free-space/512/international-space-station-icon.png"
+                  position="absolute"
+                  right="19"
+                  bottom="19"
+                />
               </Box>
             </GoogleMapReact>
           </Box>
