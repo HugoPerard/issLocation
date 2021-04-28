@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 
-import { Checkbox } from '@chakra-ui/checkbox';
 import { Image } from '@chakra-ui/image';
 import {
   Box,
@@ -51,7 +50,7 @@ export const PageISSLocation = () => {
     <Page bg="gray.800">
       {!isLoading && !isError && ISSLocationInfo && (
         <>
-          <Flex bg="gray.700" py={4} px={20} justifyContent="space-between">
+          <Flex bg="gray.700" py={2} px={20} justifyContent="space-between">
             <HStack spacing={8}>
               <Stack spacing={0}>
                 <Text fontSize="sm" color="gray.200">
@@ -112,7 +111,7 @@ export const PageISSLocation = () => {
 
           <Box
             alignSelf="center"
-            my="5"
+            my={2}
             height="78vh"
             width="70%"
             borderColor="gray.700"
