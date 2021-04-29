@@ -30,7 +30,6 @@ export const useISSLocation = (config: UseQueryOptions<any> = {}) => {
       ...config,
     }
   );
-  console.log({ result });
 
   return result;
 };
@@ -97,7 +96,11 @@ export const PageISSLocation = () => {
                 Visibility
               </Text>
               <Text fontSize="sm" color="gray.200">
-                {getIsInDaylight(ISSLocationInfo) ? <BsSun /> : <BsMoon />}
+                {getIsInDaylight(ISSLocationInfo) ? (
+                  <BsSun />
+                ) : getIsInDaylight(ISSLocationInfo) === null ? null : (
+                  <BsMoon />
+                )}
               </Text>
             </Stack>
           </HStack>
